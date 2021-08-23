@@ -1,6 +1,8 @@
 import { storage, logging } from "near-sdk-as";
 
-// --- contract code goes below
+// This is the smart contract itself. Here we need to define the cathode struct, as well as functions that transfer ownership back and forth. 
+//We should use the rust example to copy the architecture 
+
 
 export function incrementCounter(value: i32): void {
   const newCounter = storage.getPrimitive<i32>("counter", 0) + value;
