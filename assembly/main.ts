@@ -38,12 +38,14 @@ export class Cathode {
 //the transfer of ownership is successful. If not, the checkAccess function  will 
 //take the proper measures to insure that the Cathode/Cathoide Bundles do not get lost. 
 
-export class NewOwnerCheck (newOwner: i32); void {
-      storeNewOwnerId: i32;
-      constructor(storeNewOwnerId: i32){
-        this.storeNewOwnerId  =  newOwner;
+export class activeOwnerCheck (newOwner: i32); void {
+      storeActiveOwnerId: i32;
+      constructor(storeActiveOwnerId: i32){
+        this.storeActiveOwnerId  =  newOwner;
       }
 }
+
+//HERE THE TARGET CATHODE GETS FED INTO THE TRANSFER OF OFWNERSHIP FUNCTION
 
 export function transferOfOwnership(Cathode1: Cathode, newOwner: i32); void {
   
@@ -52,10 +54,9 @@ export function transferOfOwnership(Cathode1: Cathode, newOwner: i32); void {
     checkAccess(Cathode1.ownerid);
 }
 
-
 export function checkAccess(Cathode1.ownerid: Cathode.ownerid); void{
       
-    switch (storeNewOwnerId) { //This checks if the ownerid for Cathode1 (target Cathode) matches the newOwner Id stored in the NewOwnerCheck class.  
+    switch (storeActiveOwnerId) { //This checks if the ownerid for Cathode1 (target Cathode) matches the newOwner Id stored in the NewOwnerCheck class.  
         case newOwner:
             
         break; //If the storeNewOwnerId == Cathode1.ownerid, then we break this switch statement and the transfer is complete
@@ -64,7 +65,7 @@ export function checkAccess(Cathode1.ownerid: Cathode.ownerid); void{
       //about this faulty nature of the Smart Contract as a default measure, the Contract will be reverted to AerisHub's control
       //for safe-keeping in the event the smart contract has failed. 
 
-      let Cathode1.owner.id = //predefined AerisHub uniqueid. This will notify AerisHub management as well. 
+      //PANIC HERE
 
       }
 
