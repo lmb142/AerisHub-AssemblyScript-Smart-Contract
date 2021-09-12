@@ -4,6 +4,7 @@ import { storage, logging } from "near-sdk-as";
 //DEFINE AERISHUB UNIQUE ID AS A GLOBAL CONSTANT HERE. THE REASON FOR THIS 
 //IS SO THAT WAY IN THE EVENT OF PIRACY/MALICIOUS CONTRACT USE, OUR SECURITY CHECKS 
 //CAN HAVE CATHODES BE PRESERVED BY AERISHUB TAKING OWNERSHIP OF THEM. 
+//ps. code not implemented because we may use a different security infrastructure 
 
 //*****
 //HERE ONCE WE SOLIDIFY OUR DATA INFLOW, WE WILL CALL THE CATHODE CONSTRUCTOR WHICH WILL 
@@ -17,8 +18,6 @@ export class Cathode {
   pricing_Avenue: Int32Array; //this is going to determine a fixed price vs bid/ask process for appriasing the cathode/bundle
   tokenValue: Int32Array; //This is the appriasal value of the Cathode/Bundle of Cathodes
   
-  //*****
-  //DEFINE ANY OTHER NECESSSARY CATHODE CHARACTERISTICS HERE
 
   //This below constructs the actual Cathode/Bundles of Cathodes.
   constructor(uniqueid: Int32Array, ownerid: Int32Array, pricing_Avenue: Int32Array){
@@ -37,7 +36,7 @@ export function Pricing(pricing_Avenue: Int32Array) {
       switch (pricing_Avenue) {
 
       case (pricing_Avenue):
-        //if pricing_Avenue == 1, then this case is triggered. 
+
         //This case deals with the fixed price pricing model, and
         //data will be fed into here from the databse. 
         //Here we initialize the tokenValue variable
@@ -94,13 +93,13 @@ export function checkAccess(activeOwnerCheck1: activeOwnerCheck) {
       //PANIC HERE
 
       //here we want to implement some functionality that will notify Aerishub Management
-      //about this faulty nature of the Smart Contract and as a default measure, the Contract will be reverted to AerisHub's ownership
+      //about this faulty nature of the Smart Contract and as a default measure, the Cathode will be reverted to AerisHub's ownership
       //for safe-keeping in the event the smart contract has failed. 
 
       }
 
       //*****
-      //THIS IS THE END OF THE CHECK ACCESS FUNCTION. HERE WE PLAN TO IMPLEMENT A CONNECTION BETWEEN THE BACK END AND FRONT END, IN WHICH
+      //THIS IS THE END OF THE CHECK ACCESS FUNCTION. HERE WE PLAN TO IMPLEMENT A CONNECTION BETWEEN THE BACK END AND OUR DATABASE, IN WHICH
       //A SALES CONTRACT IS GENERATED, USING DATA ABOUT THE CATHODE (GOING BACKWARDS INTO THE DATABASE). 
 }
 
